@@ -1,0 +1,26 @@
+STEPS:
+Clone the repo
+Install all dependencies listed on the README page
+set up the config and any directories
+Run it
+
+
+AFTER CLONING:
+make sure ALL dependencies are in place
+
+CONF:
+for conf, no paths starting with ~, must be a full path like /home/lee/Desktop/5271/preproc
+
+MUST define paths to preproc_dir, tmp_dir, bug_dir in config
+
+seed_path definition is not recursive, CodeAlch only looks at seeds in that dir
+
+CodeAlchemist only looks at .js files in the seed_path
+
+RUNNING:
+when running, run like so with config specified as a full path:
+dotnet bin/Main.dll rewrite /home/lee/Desktop/5271/CodeAlchemist/conf/MOZ.conf
+
+For every run of CodeAlchemist (starting with seed preprocessing), the preproc, bug, and tmp directories should EXIST and be EMPTY.
+
+If you see an error like "Need more diverse seeds" you probably have a bad seed path.

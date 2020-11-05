@@ -1,0 +1,30 @@
+diff --git a/Source/WTF/wtf/Assertions.h b/Source/WTF/wtf/Assertions.h
+index 42a3b87766a..bee4bc65035 100644
+--- a/Source/WTF/wtf/Assertions.h
++++ b/Source/WTF/wtf/Assertions.h
+@@ -64,23 +64,18 @@ extern "C" void _ReadWriteBarrier(void);
+ #endif
+ #endif
+ 
+-#ifdef NDEBUG
+-/* Disable ASSERT* macros in release mode. */
+-#define ASSERTIONS_DISABLED_DEFAULT 1
+-#else
+ #define ASSERTIONS_DISABLED_DEFAULT 0
+-#endif
+ 
+ #ifndef BACKTRACE_DISABLED
+ #define BACKTRACE_DISABLED ASSERTIONS_DISABLED_DEFAULT
+ #endif
+ 
+ #ifndef ASSERT_DISABLED
+-#define ASSERT_DISABLED ASSERTIONS_DISABLED_DEFAULT
++#define ASSERT_DISABLED 1
+ #endif
+ 
+ #ifndef ASSERT_MSG_DISABLED
+-#define ASSERT_MSG_DISABLED ASSERTIONS_DISABLED_DEFAULT
++#define ASSERT_MSG_DISABLED 1
+ #endif
+ 
+ #ifndef ASSERT_ARG_DISABLED
